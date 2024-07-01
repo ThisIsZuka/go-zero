@@ -1,0 +1,7 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 8888
+RpcClientConf:
+  Endpoints:
+    - 127.0.0.1:8080
+  Timeout: 2000

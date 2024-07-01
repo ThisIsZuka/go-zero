@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package user;
+option go_package="./user";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+message GetUserByIdRequest {
+  string id = 1;
+}
+
+message GetUserByIdResponse {
+  string id = 1;
+  string fname = 2;
+  string lname = 3;
+  int32 age = 4;
+  string bdate = 5;
+  string createAt = 6;
+  string updateAt = 7;
+}
+
+message User {
+	string id = 1;
+	string fname = 2;
+	string lname = 3;
+	int32 age = 4;
+	string bdate = 5;
+	string createAt = 6;
+	string updateAt = 7;
+}
+
+message GetAllUserRequest {}
+
+message GetAllUsersResponse {
+  repeated User users = 1;
+}
+
+service UserService {
+  rpc Ping(Request) returns(Response);
+  rpc GetUserById(GetUserByIdRequest) returns(GetUserByIdResponse);
+  rpc GetAllUsers(GetAllUserRequest) returns(GetAllUsersResponse);
+}

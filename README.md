@@ -1,3 +1,3 @@
 ## Golang
 -----------
-### Premium Partners For Learning Create Go Zero
+### For Learning Create Go Zero

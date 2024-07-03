@@ -6,7 +6,7 @@ import (
 
 	"test.com/api/user/internal/svc"
 	"test.com/api/user/internal/types"
-	"test.com/rpc/userservice"
+	"test.com/rpc/client/userservice"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

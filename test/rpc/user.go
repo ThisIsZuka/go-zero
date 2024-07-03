@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"test.com/rpc/internal/config"
-	"test.com/rpc/internal/server"
+	server "test.com/rpc/internal/server/userservice"
 	"test.com/rpc/internal/svc"
 	"test.com/rpc/pb/user"
 

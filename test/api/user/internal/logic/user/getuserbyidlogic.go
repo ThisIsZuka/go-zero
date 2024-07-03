@@ -5,7 +5,7 @@ import (
 
 	"test.com/api/user/internal/svc"
 	"test.com/api/user/internal/types"
-	"test.com/rpc/userservice"
+	"test.com/rpc/client/userservice"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -39,13 +39,15 @@ func (l *GetUserByIdLogic) GetUserById(req *types.GetUserByIdRequest) (resp *typ
 
 	// สร้าง response จาก RPC response
 	resp = &types.GetUserByIdResponse{
-		ID:       rpcResp.Id,
-		FNAME:    rpcResp.Fname,
-		LNAME:    rpcResp.Lname,
-		AGE:      rpcResp.Age,
-		BDATE:    rpcResp.Bdate,
-		CreateAt: rpcResp.CreateAt,
-		UpdateAt: rpcResp.UpdateAt,
+		User: types.User{
+			ID:       rpcResp.Id,
+			FNAME:    rpcResp.Fname,
+			LNAME:    rpcResp.Lname,
+			AGE:      rpcResp.Age,
+			BDATE:    rpcResp.Bdate,
+			CreateAt: rpcResp.CreateAt,
+			UpdateAt: rpcResp.UpdateAt,
+		},
 	}
 
 	return resp, nil

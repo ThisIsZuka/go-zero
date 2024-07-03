@@ -41,8 +41,24 @@ message GetAllUsersResponse {
   repeated User users = 1;
 }
 
+message AddNewUserRequest {
+  User user = 1;
+}
+
+message AddNewUserResponse{}
+
+message DeleteUserByIdRequest {
+  string id = 1;
+}
+
+message DeleteUserByIdResponse {
+  string message = 1;
+}
+
 service UserService {
   rpc Ping(Request) returns(Response);
   rpc GetUserById(GetUserByIdRequest) returns(GetUserByIdResponse);
   rpc GetAllUsers(GetAllUserRequest) returns(GetAllUsersResponse);
+  rpc AddNewUser(AddNewUserRequest) returns(AddNewUserResponse);
+  rpc DeleteUserById (DeleteUserByIdRequest) returns (DeleteUserByIdResponse);
 }
